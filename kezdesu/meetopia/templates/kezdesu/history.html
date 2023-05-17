@@ -1,0 +1,49 @@
+{% extends 'kezdesu/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="intro-page">
+    <div class="container">
+        <h1>Tarihy</h1>
+        <p>Kezdesuler tarihy</p>
+    </div>
+</div>
+
+<div class="wrapper">
+    <section class="recent-works">
+        <h2>Tarih</h2>
+
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Аты</th>
+                        <th>Күні</th>
+                        <th>Хабарлама</th>
+                        <th>Код</th>
+                        <th>Категория</th>
+                        <th>Асхана</th>
+                        <th>Кездесу орны</th>
+                    </tr>
+                </thead>
+                {% for m in meetings_list %}
+                <tbody>
+                    <tr>
+                        <td>{{ forloop.counter }}.</td>
+                        <td>{{ m.name }}</td>
+                        <td>{{ m.date }}</td>
+                        <td>{{ m.message }}</td>
+                        <td>{{ m.code }}</td>
+                        <td>{{ m.cat }}</td>
+                        <td>{{ m.cuisine }}</td>
+                        <td>{{ m.place }}</td>
+                    </tr>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,62 @@
+{% extends 'kezdesu/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="intro-page">
+  <div class="container">
+    <h1>Senin kodyn:{{ code }}</h1>
+    <p>Kezdesushilerge kodty nemese ssylkasyn zhiber.</p>
+  </div>
+</div>
+
+<div class="wrapper">
+  <section class="keep-touch">
+    <div class="container">
+      <h2>Kesdesu elementteryn tanda</h2>
+      <p>.</p>
+      <span class="dot-dash dark">.</span>
+      <div class="row">
+        <div class="col-md-7">
+          <div class="keep-touch--white">
+            <form method="post" action="{% url 'create' %}">
+              {% csrf_token %}
+              <input type="hidden" name="code" value="{{ code }}">
+              <input type="text" placeholder="Atynyz" name="name">
+              <input type="text" placeholder="Qai kun yngaily:" readonly="readonly">
+              <input type="date" id="post_date" name="date">
+              <input type="text" placeholder="Kezdesu sanatyn tanda:" readonly="readonly">
+              <div class="form-group">
+                <select class="form-control" id="1" name="category_id">
+
+                  {% for category in categories %}
+                  <option value="{{ category.id }}" name="cat">{{ category.name }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <input type="text" placeholder="Qai ashana unaidy:" readonly="readonly">
+              <div class="form-group">
+                <select class="form-control" id="2" name="cuisine_id">
+                  {% for cuisine in cuisines %}
+                  <option value="{{ cuisine.id }}" name="cuisine">{{ cuisine.name }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+
+              <input type="text" placeholder="Qai zher unaidy:" readonly="readonly">
+              <div class="form-group">
+                <select class="form-control" id="3" name="place">
+                  {% for place in places %}
+                  <option value="{{ place.id }}">{{ place.name }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <textarea id="" rows="5" placeholder="Message" name="message"></textarea>
+              <input type="submit" class="button small">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends 'kezdesu/base.html' %}
+{% load static %}
+{% block content %}
+
+   <div class="intro-page">
+       <div class="container">
+           <h1>Portfolio</h1>
+           <p>Siz turaly aqparat</p>
+       </div>
+   </div>
+
+    <div class="wrapper">
+        <section class="recent-works">
+            <div class="container">
+                <h2>Aqparat</h2>
+                <p></p>
+                <span class="dot-dash dark">.</span>
+                <div class="recent-works--nav">
+                    <ul>
+<!--                        <li class="active" data-filter="*">All Items</li>-->
+                        <li data-filter=".print">Zhalpy aqparat</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+{% endblock content %}

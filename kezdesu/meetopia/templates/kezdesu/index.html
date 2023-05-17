@@ -1,0 +1,97 @@
+{% extends 'kezdesu/base.html' %}
+{% load static %}
+{% block content %}
+<div class="home-slider">
+    <div class="home-slider--wrapper">
+        <div>
+            <div class="home-slider--wrapper__inner"
+                style="background-image: url('{% static 'kezdesu/assets/img/slide1.jpg'%}')">
+                <div class="container">
+                    <h3>Ar kezdesu biz ushin manyzdy</h3>
+                    <h1>Qosh keldin</h1>
+                    <span class="dot-dash">.</span>
+                    <p>Bizben uaqytynyzdy unemdeniz</p>
+                    <div class="slider-buttons">
+                        <form method="POST" action="{% url 'generate_code' %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary" style="width: 220px; height: 60px;">Kodty
+                                alu</button>
+                            <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                                data-target="#myModal" style="width: 220px; height: 60px;">Kodpen kosylu</button>
+                        </form>
+                        <!-- <a href="{% url 'generate_code'%}" class="button"  style="width: 220px; height: 60px;" >Кодты алу</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="home-slider--anchor">
+    <span><i class="fa fa-anchor" aria-hidden="true"></i></span>
+</div>
+
+<div class="wrapper">
+    <section class="our-history">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <img src="{% static 'kezdesu/assets/img/restoran.jpg' %}" alt="" />
+                </div>
+                <div class="col-md-7 col-sm-12 col-xs-12">
+                    <h2>Nelikten kesdesudi osynda uimdastyruyn qazhet?</h2>
+                    <p>Kezdesu - biznes nemese zheke is sharalardy uiymdastyruda sizdin komekshiniz.
+                        Bul qosymsha sizdin en basty qundylygynyz uaqytty tiimdi paidalanuga komektesedi.</p>
+                    <p>Sonymen qatar, sizdin tandauynyzga bailanysty oryndar men is sharalardy taup beredi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="get-started">
+        <div class="container">
+            <h2>Dal qazir basta, bul tegin!</h2>
+            <a href="{% url 'generate_code'%}" class="button">Kezdesudi uyimdastyru</a>
+        </div>
+    </section>
+</div>
+
+
+{% block modals %}
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Kezdesuge kosylu ushyn kog engiz:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form method="post" action="{% url 'meeting_join' %}">
+                    {% csrf_token %}
+                    <input type="text" style="text-transform: uppercase; width: 100%;" name="code">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zhabu</button>
+                        <button type="submit" class="btn btn-primary">Qosylu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% endblock content %}
+
+    <script type="text/javascript">
+        window.odometerOptions = {
+            format: '(,ddd)',
+        };
+
+        $(document).ready(function () {
+            $('#myModal').on('shown.bs.modal', function () {
+                $(this).find('.modal-body').first().focus();
+            });
+        });
+    </script>
+</div>

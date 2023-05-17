@@ -1,0 +1,62 @@
+{% extends 'kezdesu/base.html' %}
+{% load static %}
+{% block content %}
+<div class="intro-page">
+    <div class="container">
+        <h1>Sen qosylgan kezdesu :5678998</h1>
+    </div>
+</div>
+<div class="wrapper">
+    <section class="keep-touch">
+        <div class="container">
+            <h2>Kesdesu elementteryn tanda</h2>
+            <p>.</p>
+            <span class="dot-dash dark">.</span>
+            <div class="row">
+
+                <div class="col-md-7">
+                    <div class="keep-touch--white">
+                        <form action="">
+                            <input type="text" placeholder="Atynyz">
+                            <input type="text" placeholder="Qandai zherge bargynyz keledi:" readonly="readonly">
+                            <div class="form-group">
+                                <select class="form-control" id="1" name="category_id">
+                                    <option value="1">Tabigat</option>
+                                    <option value="2">Kino</option>
+                                    <option value="3">Cafe</option>
+                                    <option value="4">Eshkaida</option>
+                                </select>
+                            </div>
+                            <input type="text" placeholder="Qai kun yngaily:" readonly="readonly">
+                            <div class="form-group">
+                                <select class="form-control" id="2" name="category_id">
+                                    <option value="1">Ds</option>
+                                    <option value="2">Ss</option>
+                                    <option value="3">Sr</option>
+                                    <option value="4">Bs</option>
+                                    <option value="5">Zhm</option>
+                                    <option value="6">Sb</option>
+                                    <option value="7">Zhs</option>
+                                </select>
+                            </div>
+                            <input type="text" placeholder="Qai ashana unaidy:" readonly="readonly">
+                            <div class="form-group">
+                                <select class="form-control" id="3" name="category_id">
+                                    <option value="1">Qazaq</option>
+                                    <option value="2">Korei</option>
+                                    <option value="3">Fast Food</option>
+                                    <option value="4">Shygys</option>
+                                    <option value="5">Zhapon</option>
+                                </select>
+                            </div>
+                            <textarea name="" id="" rows="5" placeholder="Message"></textarea>
+                            <input type="submit" class="button small">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock content %}

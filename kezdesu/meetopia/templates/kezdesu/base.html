@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> {{ title }} </title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="{% static 'kezdesu/css/vendor/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'kezdesu/css/vendor/font-awesome.css' %}" rel="stylesheet" />
+    <link href="{% static 'kezdesu/css/vendor/slick.css' %}" rel="stylesheet" />
+    <link href="{% static 'kezdesu/css/vendor/slick-theme.css' %}" rel="stylesheet" />
+    <link href="{% static 'kezdesu/css/main.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% block mainmenu %}
+<header>
+    <div class="container">
+        <div class="logo">
+                <a href="index.html"><img src="{% static 'kezdesu/assets/img/icon-kezdesu.png' %}" height="60px",  alt="" /></a>
+            </div>
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'home'%}">Basty bet</a></li>
+                <li><a href="{% url 'history'%}">Tarih</a></li>
+                <li><a href="{% url 'portfolio'%}">Portfolio</a></li>
+                <li><a href="{% url 'contact'%}">Bailanys</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu"><i class="fa fa-bars"></i></div>
+    </div>
+</header>
+{% endblock mainmenu %}
+
+{% block content %}
+{% endblock content%}
+
+{% block modals %}
+    {% endblock %}
+
+{% block footer %}
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <ul>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock footer %}
+<script src="{% static 'kezdesu/js/vendor/jquery-3.1.0.min.js' %}"></script>
+<script src="{% static 'kezdesu/js/vendor/jquery.easing.min.js' %}"></script>
+<script src="{% static 'kezdesu/js/vendor/tether.js' %}"></script>
+<script src="{% static 'kezdesu/js/vendor/bootstrap.js' %}"></script>
+<script src="{% static 'kezdesu/js/vendor/slick.js' %}"></script>
+<script src="{% static 'kezdesu/js/vendor/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'kezdesu/js/main.js' %}"></script>
+</body>
+</html>
